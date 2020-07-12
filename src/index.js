@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import API from './api';
+import SubmitForm from './submit';
 //import App from './App';
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       <h1>React App</h1>
       <h2>Next Heading</h2>
       <API></API>
+      <SubmitForm></SubmitForm>
     </div>
   )
 }
