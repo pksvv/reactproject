@@ -6,13 +6,13 @@ const Display = (props)=>{
     const listUser = ({userdata})=>{
         return userdata.map((item,index)=>{
             return(
-                <div>
-                    <h2>ID: {item._id}</h2>
-                    <h4>Name:{item.name}</h4>
-                    <h4>Phone:{item.phone}</h4>
-                    <h4>Email:{item.email}</h4>
-                    <h4>IsActive:{item.isActive}</h4>
-                </div>
+                <tr key={item._id}>
+                    <td>{item._id}</td>
+                    <td>{item.name}</td>
+                    <td>{item.phone}</td>
+                    <td>{item.email}</td>
+                    <td>{String(item.isActive)}</td>
+                </tr>
             )
         })
 
@@ -20,7 +20,21 @@ const Display = (props)=>{
 
     return(
         <div>
-            {listUser(props)}
+            <h4 id="title">React Dynamic Table</h4>
+            <table id="userData" border="1px solid black">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>isActive</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {listUser(props)}
+                </tbody>
+            </table>
         </div>
     )
 }
